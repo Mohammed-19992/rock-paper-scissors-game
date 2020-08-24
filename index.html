@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var userScore = 0;
+        var compScore = 0;
+        var ties = 0;
+        for (var i = 0; i < 5; i++) {
+            var userSelection = prompt("Please select R, P, S").toUpperCase();
+            var computerIndex = Math.floor(Math.random() * 3);
+            var container = ["R", "P", "S"];
+            var computerSelection = container[computerIndex];
+            alert("computer choice is " + computerSelection);
+        
+            if (userSelection === computerSelection) {
+                ties++;
+            } else if (
+                (userSelection === "P" && computerSelection === "R") ||
+                (userSelection === "R" && computerSelection === "S") ||
+                (userSelection === "S" && computerSelection === "P")
+            ) {
+                userScore++;
+            } else {
+                compScore++;
+            }
+        }
+        alert("user score is " + userScore + ", computer score is " + compScore + " and ties are " + ties);
+    </script>
+</body>
+</html>
